@@ -5,48 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My curriculum vitae, institutions attended, and educational awards.">
     <title>Personal experience · Myfolio</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base styling to make tables clearly visible */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .wordmark {
+            font-weight: bold;
+            text-decoration: none;
+            color: #111;
+            font-size: 1.2rem;
+        }
+        .nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #666;
+        }
+        .nav a[aria-current="page"] {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .content-header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        .lead {
+            color: #666;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        
+        /* Table Layout Styling */
+        .cv-tables-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 600px) {
+            .cv-tables-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        table.milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
+        }
+        table.milestone-table caption {
+            font-weight: bold;
+            text-align: left;
+            padding: 10px 15px;
+            background: #111;
+            color: #fff;
+            font-size: 1rem;
+        }
+        table.milestone-table th, 
+        table.milestone-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        table.milestone-table th {
+            background-color: #f5f5f5;
+            color: #555;
+            width: 35%;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        table.milestone-table tr:last-child th,
+        table.milestone-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .footer-base {
+            margin-top: 50px;
+            border-top: 1px solid #eaeaea;
+            padding-top: 20px;
+            color: #777;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" style="position: absolute; left: -10000px;">Skip to content</a>
     
     <header class="site-header">
-        <div class="wrap header-inner">
-            <a class="wordmark" href="index.html" aria-label="Myfolio home">myfolio<span>.</span></a>
-            <nav class="nav" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="experience.html" aria-current="page">Personal experience</a>
-                <a href="contacts.html">Contacts</a>
-                <a href="hobbies.html">Hobbies</a>
-            </nav>
-        </div>
+        <a class="wordmark" href="index.html" aria-label="Myfolio home">myfolio.</a>
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="experience.html" aria-current="page">Personal experience</a>
+            <a href="contacts.html">Contacts</a>
+            <a href="hobbies.html">Hobbies</a>
+        </nav>
     </header>
 
-    <div class="name-strip">
-        <div class="wrap name-track">
-            <p class="moving-name">JOB ELIJAH</p>
-        </div>
-    </div>
-
-    <main id="main" class="wrap">
-        <div class="page-intro">
-            <p class="eyebrow">The journey so far</p>
-            <span class="page-number">02 / PERSONAL EXPERIENCE</span>
-        </div>
-
+    <main id="main">
         <div class="content-header">
-            <h1>Every chapter,<br>a little more experience.</h1>
+            <h1>Every chapter, a little more experience.</h1>
             <p class="lead">A record of my education and the milestones along the way.</p>
         </div>
 
-        <section class="cv-section" aria-labelledby="cv-heading">
-            <div class="section-top">
-                <h2 id="cv-heading">Curriculum vitae</h2>
-                <span class="small-note">JOB ELIJAH · Information Technology</span>
-            </div>
-            
+        <section class="cv-section">
             <div class="cv-tables-container">
+                
                 <!-- University Table -->
                 <table class="milestone-table">
                     <caption>Higher Education</caption>
@@ -79,7 +162,7 @@
                             <td>IBM Cloud Computing</td>
                         </tr>
                         <tr>
-                            <th scope="row">Specialization</th>
+                            <th scope="row">Focus</th>
                             <td>Professional training</td>
                         </tr>
                         <tr>
@@ -88,7 +171,7 @@
                         </tr>
                         <tr>
                             <th scope="row">Certification</th>
-                            <td>IBM Cloud Computing Certified</td>
+                            <td>IBM Cloud Computing</td>
                         </tr>
                     </tbody>
                 </table>
@@ -138,35 +221,15 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-
-            <div class="note-panel">
-                <span class="note-symbol" aria-hidden="true">i</span>
-                <p>This CV records JOB ELIJAH's education, academic results, and cloud-computing training.</p>
+                
             </div>
         </section>
-
-        <div class="home-bottom">
-            <p>The next chapter is still being written.</p>
-            <a class="text-link" href="contacts.html">NEXT <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
     </main>
 
     <footer class="site-footer">
-        <div class="wrap">
-            <div class="footer-main">
-                <a class="wordmark footer-wordmark" href="index.html">myfolio<span>.</span></a>
-                <nav class="nav" aria-label="Footer navigation">
-                    <a href="index.html">Home</a>
-                    <a href="experience.html" aria-current="page">Personal experience</a>
-                    <a href="contacts.html">Contacts</a>
-                    <a href="hobbies.html">Hobbies</a>
-                </nav>
-            </div>
-            <div class="footer-base">
-                <p class="copyright">© 2026 JOB ELIJAH. All rights reserved.</p>
-                <p class="footer-note">Made with curiosity, HTML &amp; CSS.</p>
-            </div>
+        <div class="footer-base">
+            <p class="copyright">© 2026 JOB ELIJAH. All rights reserved.</p>
+            <p class="footer-note">Made with HTML &amp; CSS.</p>
         </div>
     </footer>
 </body>
